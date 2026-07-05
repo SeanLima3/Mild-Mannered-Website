@@ -28,7 +28,7 @@ body {
 }
 
 h1, h2, .nav__logo, .hero__title {
-  font-family: "Bebas Neue", Impact, sans-serif;
+  font-family: "Pathway Gothic One", Impact, sans-serif;
   letter-spacing: 0.02em;
   line-height: 0.95;
 }
@@ -79,9 +79,17 @@ a { color: inherit; text-decoration: none; }
 }
 .hero__content { position: relative; z-index: 2; }
 .hero__title {
-  font-size: clamp(3rem, 9.5vw, 7rem);
-  letter-spacing: 0.06em;
+  font-size: clamp(3.2rem, 10.5vw, 8rem);
+  letter-spacing: 0.12em;
+  margin-right: -0.12em; /* optically recenter: tracking adds space after last letter */
   text-shadow: none;
+}
+.hero__title::after {
+  content: "";
+  display: block;
+  width: 64px; height: 3px;
+  background: var(--accent);
+  margin: 1.1rem auto 0;
 }
 .hero__cta {
   margin-top: 2.4rem;
@@ -164,7 +172,7 @@ a { color: inherit; text-decoration: none; }
 .show:hover { transform: translateX(4px); border-left-color: #ff2e2e; }
 .show__date { text-align: center; min-width: 64px; }
 .show__month { display: block; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--accent); }
-.show__day { display: block; font-family: "Bebas Neue", sans-serif; font-size: 2.2rem; line-height: 1; }
+.show__day { display: block; font-family: "Pathway Gothic One", sans-serif; font-size: 2.2rem; line-height: 1; }
 .show__year { display: block; font-size: 0.7rem; color: var(--text-dim); }
 .show__info { min-width: 0; }
 .show__venue { font-size: 1.15rem; font-weight: 600; }
@@ -198,7 +206,7 @@ a { color: inherit; text-decoration: none; }
 /* ---------- CONTACT ---------- */
 .contact { display: flex; flex-direction: column; gap: 1.6rem; align-items: flex-start; }
 .contact__email {
-  font-family: "Bebas Neue", sans-serif;
+  font-family: "Pathway Gothic One", sans-serif;
   font-size: clamp(1.8rem, 5vw, 3rem);
   color: var(--text);
   border-bottom: 2px solid transparent;
