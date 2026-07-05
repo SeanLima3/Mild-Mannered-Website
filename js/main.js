@@ -10,6 +10,28 @@
   var yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+  // Smooth-scroll nav without putting #anchors in the URL,
+  // so reloading the page always starts back at the top.
+  document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+    link.addEventListener("click", function (e) {
+      var target = document.querySelector(link.getAttribute("href"));
+      if (!target) return;
+      e.preventDefault();
+      var startY = window.scrollY;
+      target.scrollIntoView({ behavior: "smooth" });
+      // Fallback: if the browser didn't start moving, jump instantly
+      setTimeout(function () {
+        if (Math.abs(window.scrollY - startY) < 2 &&
+            Math.abs(target.getBoundingClientRect().top) > 4) {
+          target.scrollIntoView({ behavior: "instant" });
+        }
+      }, 350);
+    });
+  });
+
+  // Clean up a leftover #hash from an older visit
+  if (location.hash) history.replaceState(null, "", location.pathname + location.search);
+
   renderShows();
 
   function renderShows() {
