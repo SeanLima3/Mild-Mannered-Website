@@ -13,25 +13,12 @@
    ============================================================ */
 
 const SHOWS = [
-  {
-    date: "2026-08-14",
-    venue: "The Sinclair",
-    city: "Cambridge, MA",
-    tickets: "https://example.com/tickets",
-    soldOut: false,
-  },
-  {
-    date: "2026-09-02",
-    venue: "Brooklyn Bowl",
-    city: "Brooklyn, NY",
-    tickets: "https://example.com/tickets",
-    soldOut: false,
-  },
-  {
-    date: "2026-09-20",
-    venue: "The Basement",
-    city: "Nashville, TN",
-    tickets: "",
-    soldOut: true,
-  },
+  // No shows booked right now. When one gets booked, add it like this:
+  // {
+  //   date: "2026-08-14",
+  //   venue: "The Sinclair",
+  //   city: "Cambridge, MA",
+  //   tickets: "https://example.com/tickets",  // or "" if none
+  //   soldOut: false,
+  // },
 ];
